@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Redirects</title>
+    <title>A FUCKING CORN WEBSITE MADE BY ALWIN!!!!</title>
     <style>
         /* General styles for the body */
         body {
@@ -13,18 +13,25 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            position: relative; /* Ensure GIF fountain is positioned correctly */
+            overflow: auto; /* Allow scrolling */
         }
-        
+
         /* Container for all content */
         .container {
-            text-align: center;
             background-color: #202020;
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px; /* Add margin for space at the top */
+            position: relative; /* Ensure content stays on top */
+            z-index: 1; /* Lower than the fountain effect */
         }
 
         /* Heading style */
@@ -32,30 +39,28 @@
             color: #ffffff;
             font-size: 28px;
             margin-bottom: 30px;
+            width: 100%;
+            text-align: center;
         }
 
         /* Flexbox layout for video items */
         .video-item {
             display: flex;
+            flex-direction: column;
             align-items: center;
             background-color: #303030;
             padding: 10px;
-            margin: 15px 0;
+            margin: 15px;
             border-radius: 8px;
             transition: all 0.3s ease;
             text-align: left;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            width: 300px; /* Adjusted width for better layout */
         }
 
         /* Video thumbnail styling */
         .video-item img {
-            width: 120px;
-            height: 68px;
+            width: 100%;
             border-radius: 5px;
-            margin-right: 20px;
         }
 
         /* Video link styling */
@@ -63,7 +68,8 @@
             color: #ffffff;
             font-size: 18px;
             text-decoration: none;
-            flex-grow: 1;
+            margin-top: 10px;
+            text-align: center;
         }
 
         /* Hover effect for video items */
@@ -78,15 +84,59 @@
 
         /* Responsive design */
         @media (max-width: 600px) {
-            .video-item {
+            .container {
                 flex-direction: column;
-                text-align: center;
-            }
-            .video-item img {
-                margin-bottom: 10px;
-                margin-right: 0;
+                align-items: center;
             }
         }
+
+        /* Footer style */
+        footer {
+            position: relative; /* Adjusted to flow with the content */
+            text-align: center;
+            color: #888;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 20px; /* Space above the footer */
+            z-index: 1; /* Lower than the fountain effect */
+        }
+
+        /* Fountain effect */
+        .fountain {
+            position: fixed; /* Fixed to stay in view */
+            width: 100px; /* Size of the fountain */
+            height: 100px; /* Size of the fountain */
+            background-image: url("https://c.tenor.com/mm5qhmEWsMUAAAAd/tenor.gif");
+            background-size: cover;
+            background-repeat: no-repeat;
+            animation: fly 6s ease-in-out infinite;
+            z-index: 2; /* Ensure fountains are above content */
+        }
+
+        @keyframes fly {
+            0% {
+                transform: translate(0, 0) scale(1) rotate(0deg);
+                opacity: 1;
+            }
+            50% {
+                transform: translate(150px, -400px) scale(1.5) rotate(180deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translate(-200px, -800px) scale(1) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Additional fountains for variety */
+        .fountain:nth-child(1) { animation-delay: 0s; top: 10%; left: 5%; }
+        .fountain:nth-child(2) { animation-delay: 0.5s; top: 20%; left: 25%; }
+        .fountain:nth-child(3) { animation-delay: 1s; top: 30%; left: 45%; }
+        .fountain:nth-child(4) { animation-delay: 1.5s; top: 40%; left: 65%; }
+        .fountain:nth-child(5) { animation-delay: 2s; top: 50%; left: 85%; }
+        .fountain:nth-child(6) { animation-delay: 2.5s; top: 60%; left: 10%; }
+        .fountain:nth-child(7) { animation-delay: 3s; top: 70%; left: 30%; }
+        .fountain:nth-child(8) { animation-delay: 3.5s; top: 80%; left: 50%; }
     </style>
 </head>
 <body>
@@ -94,24 +144,39 @@
         <h1>Select a Video</h1>
         
         <div class="video-item">
-            <img src="https://img.youtube.com/vi/VIDEO_ID1/hqdefault.jpg" alt="Video 1 Thumbnail">
-            <a href="https://www.youtube.com/watch?v=VIDEO_ID1" target="_blank">Video 1</a>
+            <img src="https://img.youtube.com/vi/uTnBTq31unM/hqdefault.jpg" alt="Tutorial How to Make Corn for F**ktards Thumbnail">
+            <a href="https://www.youtube.com/watch?v=uTnBTq31unM" target="_blank">TUTORIAL HOW TO MAKE CORN FOR FUCKTARDS!!!</a>
         </div>
 
         <div class="video-item">
-            <img src="https://img.youtube.com/vi/VIDEO_ID2/hqdefault.jpg" alt="Video 2 Thumbnail">
-            <a href="https://www.youtube.com/watch?v=VIDEO_ID2" target="_blank">Video 2</a>
+            <img src="https://img.youtube.com/vi/8hVN-CfJVa4/hqdefault.jpg" alt="Guccimane Loves JavaScript Thumbnail">
+            <a href="https://www.youtube.com/watch?v=8hVN-CfJVa4" target="_blank">GUCCIMANE LOVES JAVASCRIPT</a>
         </div>
 
         <div class="video-item">
-            <img src="https://img.youtube.com/vi/VIDEO_ID3/hqdefault.jpg" alt="Video 3 Thumbnail">
-            <a href="https://www.youtube.com/watch?v=VIDEO_ID3" target="_blank">Video 3</a>
+            <img src="https://img.youtube.com/vi/31NMsXDol3c/hqdefault.jpg" alt="Kid Eats Corn and Screams Thumbnail">
+            <a href="https://www.youtube.com/watch?v=31NMsXDol3c" target="_blank">KID EATS CORN AND SCREAMS!!!</a>
         </div>
 
         <div class="video-item">
-            <img src="https://img.youtube.com/vi/VIDEO_ID4/hqdefault.jpg" alt="Video 4 Thumbnail">
-            <a href="https://www.youtube.com/watch?v=VIDEO_ID4" target="_blank">Video 4</a>
+            <img src="https://img.youtube.com/vi/FBgfYmJoeLk/hqdefault.jpg" alt="Ishowspeed Negative Aura Thumbnail">
+            <a href="https://www.youtube.com/watch?v=FBgfYmJoeLk" target="_blank">ISHOWSPEED NEGATIVE AURA</a>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; Copyright thej 2024
+    </footer>
+
+    <!-- Fountain effect images -->
+    <div class="fountain"></div>
+    <div class="fountain"></div>
+    <div class="fountain"></div>
+    <div class="fountain"></div>
+    <div class="fountain"></div>
+    <div class="fountain"></div>
+    <div class="fountain"></div>
+    <div class="fountain"></div>
 </body>
 </html>
