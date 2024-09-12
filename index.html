@@ -26,7 +26,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
-        
+
         /* Heading style */
         h1 {
             color: #ffffff;
@@ -34,35 +34,57 @@
             margin-bottom: 30px;
         }
 
-        /* Links to videos */
-        a {
-            display: block;
+        /* Flexbox layout for video items */
+        .video-item {
+            display: flex;
+            align-items: center;
             background-color: #303030;
-            color: #ffffff;
-            padding: 12px;
-            margin: 12px 0;
+            padding: 10px;
+            margin: 15px 0;
             border-radius: 8px;
-            font-size: 18px;
-            text-decoration: none;
             transition: all 0.3s ease;
+            text-align: left;
             width: 100%;
-            max-width: 300px;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
-        
-        /* Hover effect for links */
-        a:hover {
+
+        /* Video thumbnail styling */
+        .video-item img {
+            width: 120px;
+            height: 68px;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+
+        /* Video link styling */
+        .video-item a {
+            color: #ffffff;
+            font-size: 18px;
+            text-decoration: none;
+            flex-grow: 1;
+        }
+
+        /* Hover effect for video items */
+        .video-item:hover {
             background-color: #ff4242;
-            color: white;
             transform: translateY(-3px);
+        }
+
+        .video-item:hover a {
+            color: white;
         }
 
         /* Responsive design */
         @media (max-width: 600px) {
-            a {
-                font-size: 16px;
-                padding: 10px;
+            .video-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            .video-item img {
+                margin-bottom: 10px;
+                margin-right: 0;
             }
         }
     </style>
@@ -70,10 +92,26 @@
 <body>
     <div class="container">
         <h1>Select a Video</h1>
-        <a href="https://www.youtube.com/watch?v=VIDEO_ID1" target="_blank">Video 1</a>
-        <a href="https://www.youtube.com/watch?v=VIDEO_ID2" target="_blank">Video 2</a>
-        <a href="https://www.youtube.com/watch?v=VIDEO_ID3" target="_blank">Video 3</a>
-        <a href="https://www.youtube.com/watch?v=VIDEO_ID4" target="_blank">Video 4</a>
+        
+        <div class="video-item">
+            <img src="https://img.youtube.com/vi/VIDEO_ID1/hqdefault.jpg" alt="Video 1 Thumbnail">
+            <a href="https://www.youtube.com/watch?v=VIDEO_ID1" target="_blank">Video 1</a>
+        </div>
+
+        <div class="video-item">
+            <img src="https://img.youtube.com/vi/VIDEO_ID2/hqdefault.jpg" alt="Video 2 Thumbnail">
+            <a href="https://www.youtube.com/watch?v=VIDEO_ID2" target="_blank">Video 2</a>
+        </div>
+
+        <div class="video-item">
+            <img src="https://img.youtube.com/vi/VIDEO_ID3/hqdefault.jpg" alt="Video 3 Thumbnail">
+            <a href="https://www.youtube.com/watch?v=VIDEO_ID3" target="_blank">Video 3</a>
+        </div>
+
+        <div class="video-item">
+            <img src="https://img.youtube.com/vi/VIDEO_ID4/hqdefault.jpg" alt="Video 4 Thumbnail">
+            <a href="https://www.youtube.com/watch?v=VIDEO_ID4" target="_blank">Video 4</a>
+        </div>
     </div>
 </body>
 </html>
